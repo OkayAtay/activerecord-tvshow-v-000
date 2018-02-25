@@ -1,2 +1,2 @@
-class CreateShors < ActiveRecord::Migrate
+class CreateShows < ActiveRecord::Migrate
 end
