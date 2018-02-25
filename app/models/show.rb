@@ -6,8 +6,8 @@ class Show < ActiveRecord::Base
   end
 
   def self.most_popular_show
-    rating = Show.maximum('rating')
-    Show.find_by(rating)
+    high_rating = Show.maximum('rating')
+    Show.find_by(rating: '#{high_rating}')
   end
 
   def self.lowest_rating
@@ -17,7 +17,7 @@ class Show < ActiveRecord::Base
   def self.least_popular_show
     binding.pry
     low_rating = Show.minimum('rating')
-    Show.find_by(low_rating)
+    Show.find_by(rating: '#{low_rating}')
   end
 
   def self.ratings_sum
